@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "document.Controllers.ConvertController",
+    "Method": "DownloadVideo",
+    "RelativePath": "api/Convert/DownloadVideo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "document.Controllers.DownloadRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "document.Controllers.ConvertController",
+    "Method": "WordToPdfAspos",
+    "RelativePath": "api/Convert/Word-To-Pdf-With-Aspos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "document.Controllers.ConvertController",
+    "Method": "WordToPdfLibreOffice",
+    "RelativePath": "api/Convert/Word-To-Pdf-With-LibreOffice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
