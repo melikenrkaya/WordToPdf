@@ -5,6 +5,24 @@ Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode e
 
 ---
 
+Bu proje; .NET 8 tabanlı, hem **Word → PDF** dönüştürme hem de **video indirme / format dönüştürme** işlemleri yapabilen bir Web API içerir.
+
+---
+
+## 🚀 Özellikler
+
+### 📄 **Word → PDF**
+- **LibreOffice ile** dönüştürme (Office gerektirmez)
+- **Aspose.Words ile** dönüştürme (yüksek doğruluk)
+
+### 🎥 **Video İndirme**
+- **yt-dlp** ile YouTube ve desteklenen diğer platformlardan video indirme
+- **ffmpeg** ile video uyumluluk dönüştürme
+
+### 🎵 **MP4 → MP3 Dönüştürme**
+- MP4 içinden ses çıkarma
+- Yüksek kaliteli MP3 kaydı
+
 ## 🔧 Teknolojiler
 
 * ASP.NET Core Web API
