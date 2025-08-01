@@ -1,169 +1,168 @@
 Tamam 👍
-O zaman senin bu son eklediğin **MP4 → MP3 dönüştürme** endpoint’ini de içerecek şekilde
-mevcut projen için **güncel bir README.md** dosyasını baştan ve düzenli olarak yazayım.
+Senin mevcut README’ne **MP4 → MP3 dönüştürme** özelliğini eklenmiş hali şöyle olacak.
 
 ---
-
-## 📌 README.md
 
 ```markdown
-# 📂 Document & Video Converter API
+# 📄 Word to PDF & 🎥 Video Downloader API
 
-Bu proje; .NET 8 tabanlı, hem **Word → PDF** dönüştürme hem de **video indirme / format dönüştürme** işlemleri yapabilen bir Web API içerir.
+Bu proje, **Word belgelerini PDF formatına dönüştüren**, **YouTube/desteklenen platformlardan video indiren**  
+ve **MP4 videolarını MP3 ses dosyasına dönüştüren** bir **ASP.NET Core Web API** uygulamasıdır.  
 
----
-
-## 🚀 Özellikler
-
-### 📄 **Word → PDF**
-- **LibreOffice ile** dönüştürme (Office gerektirmez)
-- **Aspose.Words ile** dönüştürme (yüksek doğruluk)
-
-### 🎥 **Video İndirme**
-- **yt-dlp** ile YouTube ve desteklenen diğer platformlardan video indirme
-- **ffmpeg** ile video uyumluluk dönüştürme
-
-### 🎵 **MP4 → MP3 Dönüştürme**
-- MP4 içinden ses çıkarma
-- Yüksek kaliteli MP3 kaydı
+Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode edilerek her oynatıcıda sorunsuz çalışır.  
+MP4 → MP3 dönüşümünde ise video içerisindeki ses yüksek kaliteli MP3 olarak çıkarılır.
 
 ---
 
-## 🛠 Gerekli Bağımlılıklar
+## 🔧 Teknolojiler
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
-- [LibreOffice](https://www.libreoffice.org/download/download/) *(LibreOffice ile PDF dönüştürme için)*
-- [Aspose.Words](https://releases.aspose.com/words/net/) *(NuGet ile eklenebilir)*
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases)
-- [ffmpeg](https://ffmpeg.org/download.html)
-
-> **Not:** `yt-dlp.exe` ve `ffmpeg.exe` dosyalarını proje ana klasörüne ekleyin.  
-> Visual Studio'da **Copy to Output Directory → Copy always** ayarını yapın.
+* ASP.NET Core Web API
+* Swagger UI
+* Aspose.Words (Word → PDF dönüşümü)
+* yt-dlp (Video indirme aracı)
+* FFmpeg (Video/ses encode ve MP4 → MP3 dönüşümü)
+* C#
 
 ---
 
-## 📂 API Endpoint'leri
-
-### 1️⃣ **Word → PDF (LibreOffice ile)**
-**POST**
-```
-
-/api/convert/word-to-pdf-libreoffice
+## 📁 Katmanlar ve Klasörler
 
 ```
-Form-data:
-- `file`: `.docx` dosyası
 
-Dönüş: PDF dosyası
-
----
-
-### 2️⃣ **Word → PDF (Aspose ile)**
-**POST**
-```
-
-/api/convert/word-to-pdf-aspose
-
-```
-Form-data:
-- `file`: `.docx` dosyası
-
-Dönüş: PDF dosyası
-
----
-
-### 3️⃣ **Video İndirme (yt-dlp + ffmpeg)**
-**POST**
-```
-
-/api/convert/download-video
+📦 WordToPdf-And-YoutubeDownloadVideo
+┣ 📂Controllers        → API Controller dosyaları
+┣ 📂Downloads          → İndirilen videolar
+┣ 📂Properties         → Proje ayarları
+┣ appsettings.json     → Config dosyası
+┣ Program.cs           → Uygulama giriş noktası
+┗ WordToPdf.sln        → Çözüm dosyası
 
 ````
-JSON:
-```json
-{
-  "url": "https://www.youtube.com/watch?v=xxxxxxxx"
-}
+
+---
+
+## 🖥️ Proje Konsol ve Çıktı Görüntüsü
+<img width="553" height="973" alt="d1" src="https://github.com/user-attachments/assets/83fe6577-183d-4fab-940a-4423d584ea53" />
+<img width="946" height="866" alt="D2" src="https://github.com/user-attachments/assets/6a7a8804-1aa6-4eb9-9029-2141440a1e8f" />
+
+---
+
+## ⚙️ Kurulum
+
+1. Projeyi klonlayın:
+   ```bash
+   git clone https://github.com/KULLANICI_ADI/WordToPdf-And-YoutubeDownloadVideo.git
 ````
 
-Dönüş:
+2. Gerekli bağımlılıkları yükleyin:
+
+   * Aspose.Words
+   * yt-dlp.exe ve ffmpeg.exe dosyalarını proje kök klasörüne ekleyin
+   * Properties → Copy to Output Directory → Copy always
+
+3. Uygulamayı çalıştırın:
+
+   ```bash
+   dotnet run
+   ```
+
+   Tarayıcıda: **[http://localhost:5116/index.html](http://localhost:5116/index.html)**
+
+---
+
+## 📌 API Endpoint’leri
+
+### 📄 Word → PDF
+
+```
+POST /Convert/WordToPdf
+```
+
+Form-Data:
+
+* `file` → Word dosyası (.docx, .doc)
+
+Dönüş: PDF dosyası yolu
+
+---
+
+### 🎥 Video İndir
+
+```
+POST /Convert/DownloadVideo
+```
+
+Body (JSON):
 
 ```json
 {
-  "Message": "Video başarıyla indirildi ve uyumlu hale getirildi",
-  "FilePath": "C:\\...\\Downloads\\video.mp4",
-  "FileName": "video.mp4",
-  "SizeMB": 15.2
+  "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+}
+```
+
+Dönüş (JSON):
+
+```json
+{
+  "message": "Video başarıyla indirildi ve uyumlu MP4 formatına dönüştürüldü",
+  "filePath": "C:\\path\\to\\Downloads\\video.mp4",
+  "sizeMB": 123.45
 }
 ```
 
 ---
 
-### 4️⃣ **MP4 → MP3 Dönüştürme**
-
-**POST**
+### 🎵 MP4 → MP3 Dönüştürme
 
 ```
-/api/convert/mp4-to-mp3
+POST /Convert/Mp4ToMp3
 ```
 
-JSON:
+Body (JSON):
 
 ```json
 {
-  "filePath": "C:\\Users\\User\\Downloads\\video.mp4"
+  "filePath": "C:\\path\\to\\Downloads\\video.mp4"
 }
 ```
 
-Dönüş:
+Dönüş (JSON):
 
 ```json
 {
-  "Message": "MP4 başarıyla MP3'e dönüştürüldü",
-  "Mp3Path": "C:\\Users\\User\\Downloads\\video.mp3",
-  "FileName": "video.mp3",
-  "SizeMB": 5.3
+  "message": "MP4 başarıyla MP3'e dönüştürüldü",
+  "mp3Path": "C:\\path\\to\\Downloads\\video.mp3",
+  "fileName": "video.mp3",
+  "sizeMB": 5.3
 }
 ```
 
----
-
-## ⚙️ Çalıştırma
-
-1. Bağımlılıkları yükleyin (LibreOffice, ffmpeg, yt-dlp)
-2. Bu repo'yu indirin
-3. Visual Studio'da açın
-4. `yt-dlp.exe` ve `ffmpeg.exe` dosyalarını proje ana klasörüne ekleyin
-5. Terminalde çalıştırın:
-
-```bash
-dotnet run
-```
-
-6. Tarayıcı / Postman ile endpoint'leri test edin
+> **Not:**
+>
+> * `filePath` alanı var olan bir `.mp4` dosyasının tam yolunu belirtmelidir.
+> * Dönüştürme işlemi sırasında **FFmpeg** kullanılır.
 
 ---
 
 ## 📌 Notlar
 
-* LibreOffice yolu varsayılan olarak `C:\Program Files\LibreOffice\program\soffice.exe` olarak ayarlanmıştır.
-  Farklı ise kodda güncelleyin.
-* Aspose.Words ücretlidir, deneme sürümünde çıktı dosyasında watermark olabilir.
-* Video indirme ve dönüştürme işlemleri `Downloads` klasörüne kaydedilir.
-* MP4 → MP3 dönüştürmede dosya yolu JSON ile verilmelidir.
+* Büyük dosyaları (`*.mp4`, `*.exe`) `.gitignore` ile hariç tutun.
+* İndirme hızı internet bağlantınıza ve seçilen kaliteye göre değişebilir.
+* FFmpeg ve yt-dlp olmadan video indirme ve MP4 → MP3 dönüştürme çalışmaz.
 
 ---
+
+## 👩‍💻 Geliştiren
+
+Melikenur Kaya
+[LinkedIn](https://linkedin.com/in/melikenur-kaya) • [GitHub](https://github.com/melikenrkaya)
 
 ```
 
 ---
 
-Bu README’yi proje köküne **README.md** olarak koyarsan GitHub’da ve editörde düzenli görünecek.
+Eğer istersen ben sana bu README’nin yanına **Postman koleksiyon dosyasını** da hazırlayabilirim,  
+böylece API’yi tek tıklamayla test edebilirsin.  
 
----
-
-Eğer istersen ben sana **bu API’nin Postman koleksiyonunu** da hazırlayabilirim,  
-tek tıklama ile tüm endpoint’leri test edebilirsin.  
-
-Onu da yapayım mı?
+Bunu yapmamı ister misin?
 ```
