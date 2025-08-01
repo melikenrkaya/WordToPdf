@@ -147,12 +147,3 @@ Dönüş (JSON):
 Melikenur Kaya
 [LinkedIn](https://linkedin.com/in/melikenur-kaya) • [GitHub](https://github.com/melikenrkaya)
 
-```
-
----
-
-Eğer istersen ben sana bu README’nin yanına **Postman koleksiyon dosyasını** da hazırlayabilirim,  
-böylece API’yi tek tıklamayla test edebilirsin.  
-
-Bunu yapmamı ister misin?
-```
