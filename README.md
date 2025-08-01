@@ -35,13 +35,6 @@ Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode e
 <img width="946" height="866" alt="D2" src="https://github.com/user-attachments/assets/6a7a8804-1aa6-4eb9-9029-2141440a1e8f" />
 ---
 
-## ⚙️ Kurulum
-
-1. Projeyi klonlayın:
-
-   ```bash
-   git clone https://github.com/KULLANICI_ADI/WordToPdf-And-YoutubeDownloadVideo.git
-   ```
 
 
 ## ⚙️ Kurulum
