@@ -1,70 +1,61 @@
-<h1 align="center">📄✨ Word to PDF & 🎥 Video Downloader API</h1>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/.NET-8.0-purple?style=for-the-badge&logo=dotnet" />
-  <img src="https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=csharp" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
-  <img src="https://img.shields.io/github/stars/melikenrkaya/WordToPdf-And-YoutubeDownloadVideo?style=for-the-badge" />
-</p>
-
----
-
-## 📌 API Endpoint’leri
-
-### 1️⃣ Word → PDF
-```http
-POST /Convert/WordToPdf
-
 # 📄 Word to PDF & 🎥 Video Downloader API
 
-Bu proje, **Word belgelerini PDF formatına dönüştüren** ve **YouTube/desteklenen platformlardan video indiren** bir **ASP.NET Core Web API** uygulamasıdır.  
-Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode edilerek **her oynatıcıda sorunsuz çalışır**.
+Bu proje, **Word belgelerini PDF formatına dönüştüren** ve **YouTube/desteklenen platformlardan video indiren** bir **ASP.NET Core Web API** uygulamasıdır.
+Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode edilerek her oynatıcıda sorunsuz çalışır.
 
 ---
 
-## 🔧 Kullanılan Teknolojiler
-- **ASP.NET Core Web API**
-- **Swagger UI** (API dokümantasyonu ve test arayüzü)
-- **Aspose.Words** (Word → PDF dönüşümü)
-- **yt-dlp** (Video indirme aracı)
-- **FFmpeg** (Video/ses encode)
-- **C#**
+## 🔧 Teknolojiler
+
+* ASP.NET Core Web API
+* Swagger UI
+* Aspose.Words (Word → PDF dönüşümü)
+* yt-dlp (Video indirme aracı)
+* FFmpeg (Video/ses encode)
+* C#
 
 ---
 
 ## 📁 Katmanlar ve Klasörler
-📦 **WordToPdf-And-YoutubeDownloadVideo**  
- ┣ 📂**Controllers** → API controller dosyaları  
- ┣ 📂**Downloads** → İndirilen videolar  
- ┣ 📂**Properties** → Proje ayarları  
- ┣ **appsettings.json** → Config dosyası  
- ┣ **Program.cs** → Uygulama giriş noktası  
- ┗ **WordToPdf.sln** → Çözüm dosyası  
 
+```
+📦 WordToPdf-And-YoutubeDownloadVideo
+ ┣ 📂Controllers        → API Controller dosyaları
+ ┣ 📂Downloads          → İndirilen videolar
+ ┣ 📂Properties         → Proje ayarları
+ ┣ appsettings.json     → Config dosyası
+ ┣ Program.cs           → Uygulama giriş noktası
+ ┗ WordToPdf.sln        → Çözüm dosyası
+```
+
+---
+
+## 🖥️ Proje Konsol ve Çıktı Görüntüsü
+<img width="553" height="973" alt="d1" src="https://github.com/user-attachments/assets/83fe6577-183d-4fab-940a-4423d584ea53" />
+<img width="946" height="866" alt="D2" src="https://github.com/user-attachments/assets/6a7a8804-1aa6-4eb9-9029-2141440a1e8f" />
 ---
 
 ## ⚙️ Kurulum
 
-### 1️⃣ Projeyi Klonlayın
-```bash
-git clone https://github.com/KULLANICI_ADI/WordToPdf-And-YoutubeDownloadVideo.git
-cd WordToPdf-And-YoutubeDownloadVideo
-````
+1. Projeyi klonlayın:
 
-### 2️⃣ Gerekli Bağımlılıkları Yükleyin
+   ```bash
+   git clone https://github.com/KULLANICI_ADI/WordToPdf-And-YoutubeDownloadVideo.git
+   ```
 
-* **Aspose.Words** (NuGet üzerinden yüklenir)
-* **yt-dlp.exe** ve **ffmpeg.exe** dosyalarını proje kök klasörüne ekleyin
-* Properties → **Copy to Output Directory** → **Copy always**
+2. Gerekli bağımlılıkları yükleyin:
 
-### 3️⃣ Uygulamayı Çalıştırın
+   * Aspose.Words
+   * yt-dlp.exe ve ffmpeg.exe dosyalarını proje kök klasörüne ekleyin
+   * Properties → Copy to Output Directory → Copy always
 
-```bash
-dotnet run
-```
+3. Uygulamayı çalıştırın:
 
-Tarayıcıda Swagger arayüzüne erişin:
-**[http://localhost:5116/index.html](http://localhost:5116/index.html)**
+   ```bash
+   dotnet run
+   ```
+
+Tarayıcıda: **[http://localhost:5116/index.html](http://localhost:5116/index.html)**
 
 ---
 
@@ -72,25 +63,25 @@ Tarayıcıda Swagger arayüzüne erişin:
 
 ### 📄 Word → PDF
 
-```http
+```
 POST /Convert/WordToPdf
 ```
 
-**Form-Data:**
+Form-Data:
 
 * `file` → Word dosyası (.docx, .doc)
 
-📌 **Dönüş:** PDF dosyası yolu
+Dönüş: PDF dosyası yolu
 
 ---
 
 ### 🎥 Video İndir
 
-```http
+```
 POST /Convert/DownloadVideo
 ```
 
-**Body (JSON):**
+Body (JSON):
 
 ```json
 {
@@ -98,7 +89,7 @@ POST /Convert/DownloadVideo
 }
 ```
 
-📌 **Dönüş (JSON):**
+Dönüş (JSON):
 
 ```json
 {
@@ -110,16 +101,9 @@ POST /Convert/DownloadVideo
 
 ---
 
-## 🧪 Demo / Test
-
-Swagger UI üzerinden API isteklerini kolayca test edebilirsiniz.
-Ayrıca video indirme işlemi sonrası `Downloads` klasöründe sonucu görebilirsiniz.
-
----
-
 ## 📌 Notlar
 
-* **Büyük dosyaları** (`*.mp4`, `*.exe`) GitHub’a yüklememek için `.gitignore` kullanın.
+* Büyük dosyaları (`*.mp4`, `*.exe`) `.gitignore` ile hariç tutun.
 * İndirme hızı internet bağlantınıza ve seçilen kaliteye göre değişebilir.
 * FFmpeg ve yt-dlp olmadan video indirme çalışmaz.
 
@@ -127,13 +111,9 @@ Ayrıca video indirme işlemi sonrası `Downloads` klasöründe sonucu görebili
 
 ## 👩‍💻 Geliştiren
 
-**Melikenur Kaya**
-[LinkedIn](https://www.linkedin.com/) • [GitHub](https://github.com/melikenrkaya)
-
-```
+Melikenur Kaya
+[LinkedIn](https://linkedin.com/in/melikenur-kaya) • [GitHub](https://github.com/melikenrkaya)
 
 ---
 
-Eğer istersen bu README’ye **direkt resim ekleme** (Issues üzerinden yükleme linkleriyle) kısımlarını da hazır bırakabilirim ki sen URL’leri ekleyince görseller direkt çıkar.  
-İster misin onu da yapayım?
-```
+Onu da yapmamı ister misin?
