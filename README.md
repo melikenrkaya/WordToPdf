@@ -1,16 +1,7 @@
-Tamam 👍
-Senin mevcut README’ne **MP4 → MP3 dönüştürme** özelliğini eklenmiş hali şöyle olacak.
-
----
-
-```markdown
 # 📄 Word to PDF & 🎥 Video Downloader API
 
-Bu proje, **Word belgelerini PDF formatına dönüştüren**, **YouTube/desteklenen platformlardan video indiren**  
-ve **MP4 videolarını MP3 ses dosyasına dönüştüren** bir **ASP.NET Core Web API** uygulamasıdır.  
-
-Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode edilerek her oynatıcıda sorunsuz çalışır.  
-MP4 → MP3 dönüşümünde ise video içerisindeki ses yüksek kaliteli MP3 olarak çıkarılır.
+Bu proje, **Word belgelerini PDF formatına dönüştüren** ve **YouTube/desteklenen platformlardan video indiren** bir **ASP.NET Core Web API** uygulamasıdır.
+Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode edilerek her oynatıcıda sorunsuz çalışır.
 
 ---
 
@@ -20,7 +11,7 @@ MP4 → MP3 dönüşümünde ise video içerisindeki ses yüksek kaliteli MP3 ol
 * Swagger UI
 * Aspose.Words (Word → PDF dönüşümü)
 * yt-dlp (Video indirme aracı)
-* FFmpeg (Video/ses encode ve MP4 → MP3 dönüşümü)
+* FFmpeg (Video/ses encode)                   //proje içinde şu an yok 25mb üstü olduğu için repom da yok!!
 * C#
 
 ---
@@ -28,24 +19,30 @@ MP4 → MP3 dönüşümünde ise video içerisindeki ses yüksek kaliteli MP3 ol
 ## 📁 Katmanlar ve Klasörler
 
 ```
-
 📦 WordToPdf-And-YoutubeDownloadVideo
-┣ 📂Controllers        → API Controller dosyaları
-┣ 📂Downloads          → İndirilen videolar
-┣ 📂Properties         → Proje ayarları
-┣ appsettings.json     → Config dosyası
-┣ Program.cs           → Uygulama giriş noktası
-┗ WordToPdf.sln        → Çözüm dosyası
-
-````
+ ┣ 📂Controllers        → API Controller dosyaları
+ ┣ 📂Downloads          → İndirilen videolar
+ ┣ 📂Properties         → Proje ayarları
+ ┣ appsettings.json     → Config dosyası
+ ┣ Program.cs           → Uygulama giriş noktası
+ ┗ WordToPdf.sln        → Çözüm dosyası
+```
 
 ---
 
 ## 🖥️ Proje Konsol ve Çıktı Görüntüsü
 <img width="553" height="973" alt="d1" src="https://github.com/user-attachments/assets/83fe6577-183d-4fab-940a-4423d584ea53" />
 <img width="946" height="866" alt="D2" src="https://github.com/user-attachments/assets/6a7a8804-1aa6-4eb9-9029-2141440a1e8f" />
-
 ---
+
+## ⚙️ Kurulum
+
+1. Projeyi klonlayın:
+
+   ```bash
+   git clone https://github.com/KULLANICI_ADI/WordToPdf-And-YoutubeDownloadVideo.git
+   ```
+
 
 ## ⚙️ Kurulum
 
