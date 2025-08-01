@@ -114,6 +114,4 @@ Dönüş (JSON):
 Melikenur Kaya
 [LinkedIn](https://linkedin.com/in/melikenur-kaya) • [GitHub](https://github.com/melikenrkaya)
 
----
 
-Onu da yapmamı ister misin?
