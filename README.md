@@ -1,14 +1,9 @@
 # 📄 Word to PDF & 🎥 Video Downloader API
 
-Bu proje, **Word belgelerini PDF formatına dönüştüren** ve **YouTube/desteklenen platformlardan video indiren** bir **ASP.NET Core Web API** uygulamasıdır.
+Bu proje, **Word belgelerini PDF formatına dönüştüren**, **MP4 videoları MP3 formatına dönüştüren**, ve **YouTube/desteklenen platformlardan video indiren** bir **ASP.NET Core Web API** uygulamasıdır.
 Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode edilerek her oynatıcıda sorunsuz çalışır.
 
 ---
-
-Bu proje; .NET 8 tabanlı, hem **Word → PDF** dönüştürme hem de **video indirme / format dönüştürme** işlemleri yapabilen bir Web API içerir.
-
----
-
 ## 🚀 Özellikler
 
 ### 📄 **Word → PDF**
