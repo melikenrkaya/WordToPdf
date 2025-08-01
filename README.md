@@ -32,3 +32,71 @@ Amacı hem **belgeleri PDF'e çevirmek**, hem de **YouTube / desteklenen diğer 
 ```http
 POST /Convert/WordToPdf
 
+Form-Data:
+
+file → Word dosyası (.docx, .doc)
+
+Dönüş: PDF dosyası yolu
+
+2️⃣ Video İndir
+POST /Convert/DownloadVideo
+
+Body (JSON):
+{
+  "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+}
+Dönüş (JSON):
+{
+  "message": "Video başarıyla indirildi ve uyumlu MP4 formatına dönüştürüldü",
+  "filePath": "C:\\path\\to\\Downloads\\video.mp4",
+  "sizeMB": 123.45
+}
+🛠️ Kurulum
+# 1️⃣ Projeyi klonla
+git clone https://github.com/KULLANICI_ADI/WordToPdf-And-YoutubeDownloadVideo.git
+cd WordToPdf-And-YoutubeDownloadVideo
+
+# 2️⃣ Gerekli bağımlılıkları yükle
+# - Aspose.Words
+# - yt-dlp.exe ve ffmpeg.exe dosyalarını proje köküne koy
+# - Properties → Copy to Output Directory → Copy always
+
+# 3️⃣ Çalıştır
+dotnet run
+
+Tarayıcıda: [http://localhost:5116/index.html]
+
+📂 Klasör Yapısı
+📁 Downloads/       → İndirilen videolar
+📁 Controllers/     → API controller dosyaları
+📁 Services/        → Servis katmanı
+📁 Properties/      → Proje ayarları
+
+📸 Uygulamanın Ekran Görüntüsü
+
+<img width="946" height="866" alt="D2" src="https://github.com/user-attachments/assets/f6230b12-ff03-480f-a5c6-bc52795010a2" />
+<img width="553" height="973" alt="d1" src="https://github.com/user-attachments/assets/3e2ca21a-ff99-4b5c-9af8-33af35c6ea3f" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
