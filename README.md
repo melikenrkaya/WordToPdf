@@ -45,7 +45,8 @@ Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode e
 
 ## 🖥️ Proje Konsol ve Çıktı Görüntüsü
 <img width="553" height="973" alt="d1" src="https://github.com/user-attachments/assets/83fe6577-183d-4fab-940a-4423d584ea53" />
-<img width="946" height="866" alt="D2" src="https://github.com/user-attachments/assets/6a7a8804-1aa6-4eb9-9029-2141440a1e8f" />
+<img width="935" height="793" alt="d3" src="https://github.com/user-attachments/assets/6d615711-d306-4eea-bccd-316d94b9ba0f" />
+
 ---
 
 ## ⚙️ Kurulum
