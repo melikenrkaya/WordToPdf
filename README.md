@@ -11,7 +11,7 @@ Videolar `yt-dlp` ile indirilir, **FFmpeg** ile H.264 + AAC formatında encode e
 * Swagger UI
 * Aspose.Words (Word → PDF dönüşümü)
 * yt-dlp (Video indirme aracı)
-* FFmpeg (Video/ses encode)
+* FFmpeg (Video/ses encode)      //proje içinde şu an yok 25mb üstü olduğu için repom da yok!!
 * C#
 
 ---
